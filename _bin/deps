@@ -1,9 +1,0 @@
-#!/usr/bin/env Rscript
-
-for (i in setdiff(c(
-  'animation',
-  'knitr',
-  'hexbin'
-  ), .packages(TRUE))) {
-  install.packages(i)
-}
