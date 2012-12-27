@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {{> head }}
+    {{{ page.stylesheets }}}
+  </head>
+  <body>
+    <div class="wrapper">
+      {{> header }}
+      <section>
+        <h2>{{{page.title}}}</h2>
+        {{{ page.content }}}
+        <div id="disqus_thread"></div>
+      </section>
+    </div>
+    {{> footer }}
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+  </body>
+  {{> javascripts }}
+</html>

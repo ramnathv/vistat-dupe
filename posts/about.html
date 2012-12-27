@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="viewport" 
+      content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="author" content="" />
+    <title>About</title>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel='stylesheet' href='../libraries/frameworks/dinky/stylesheets/styles.css'>
+    <link rel='stylesheet' href='../libraries/highlighters/prettify/css/twitter-bootstrap.css'>
+        <link rel="stylesheet" href = "../assets/css/custom.css">
+<link rel="stylesheet" href = "../assets/css/ribbons.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Vistat</h1>
+        <p class="header">A reproducible gallery of statistical graphics</p>
+        <ul>
+           <li><a href='index.html'>Home</a></li>
+     <li><a href='about.html'>Blog</a></li>
+     <li><a href='tags.html'>Tags</a></li>
+  </ul>
+          <div class="misc vcard">
+      <h4 style='color:white;'>Contact</h4>
+        <ul>
+            <li class="contact">
+             <address><a href="mailto:contact@supstat.com">email</a></address>
+            </li>
+          
+            <li class="github">
+             <a href="http://github.com/supstat/" rel="me">github</a>
+            </li>
+        </ul>
+    </div><!-- misc -->
+</header>
+            <section>
+        <h2>About</h2>
+        
+<p>This page shows you all the instructions on how to contribute to Vistat. Before you get started, you need to fork the <a href="https://github.com/supstat/vistat">supstat/vistat</a> repository to your own Github account (click the <code>Fork</code> button). You are assumed to have basic knowledge of GIT and R.</p>
+
+<h2>New Article</h2>
+
+<p>To start a new article, run</p>
+
+<pre><code class="bash">rake post title=&quot;A Title&quot;
+</code></pre>
+
+<p>and you will get an <a href="http://www.rstudio.com/ide/docs/authoring/using_markdown">R Markdown</a> (Rmd) file under <code>_source/</code> named <code>yyyy-mm-dd-a-title.Rmd</code>, which is a plain text file and you can edit it with your favorite text editor. At the moment, RStudio has the best support to Rmd files. Here is an <a href="https://github.com/yihui/knitr-examples/blob/master/001-minimal.Rmd">Rmd sample file</a> and its <a href="https://github.com/yihui/knitr-examples/blob/master/001-minimal.md">output</a>.</p>
+
+<p>If you do not have or understand <code>rake</code>, just copy an existing Rmd file, rename it and open with a text editor.</p>
+
+<h2>Edit an Article</h2>
+
+<p>There are a few fields in the header such as <code>author</code> and <code>tags</code>; if you have multiple entries, use the comma to separate them, e.g. <code>author: [taiyun, yihui]</code>. Note all authors need to put their information in <a href="https://github.com/supstat/vistat/blob/gh-pages/_config.yml"><code>_config.yml</code></a>, and input the author id&#39;s to the <code>author</code> field (the same applies to reviewers).</p>
+
+<p>You can write math in the LaTeX syntax, e.g. <code>$\alpha+\beta$</code> renders inline like \(\alpha+\beta\), and <code>$$f(x)=\frac{1}{\sqrt{2\pi}}e^{-x^2/2}$$</code> renders the display style</p>
+
+<p>\[f(x)=\frac{1}{\sqrt{2\pi}}e^{-x^2/2}\]</p>
+
+<p>If you want to generate animations, set <code>animation: true</code> in the preamble of the article and use the chunk option <code>fig.show=&#39;animate&#39;</code> in the chunk header. Similarly, <code>d3: true</code> will load D3 in the page.</p>
+
+<h2>Compilation</h2>
+
+<p>The executable script <code>_bin/knit</code> is essentially an R script. For Linux/Mac users, you can compile an Rmd file to md by</p>
+
+<pre><code class="bash">./_bin/knit _source/yyyy-mm-dd-your-post.Rmd
+</code></pre>
+
+<p>For Windows users, use <code>Rscript</code> instead:</p>
+
+<pre><code class="bash">Rscript ./_bin/knit _source/yyyy-mm-dd-your-post.Rmd
+</code></pre>
+
+<p>You can certainly compile the article inside your editor like RStudio, and the above approach is only necessary if you need animations to work.</p>
+
+<h2>Preview</h2>
+
+<p>If you want to preview your article in the website, you can run</p>
+
+<pre><code class="bash">rake preview
+</code></pre>
+
+<p>which is basically a wapper to <code>jekyll --server --auto</code>. Of course you need to install Jekyll first.</p>
+
+<h2>Submission</h2>
+
+<p>After you are done with an article, commit it to your forked repository and submit a pull request to us. We will get it reviewed and you will see comments online. Further revisions may be required, in which case you just make the revision and continue commit in the changes, and they will appear in the previous pull request.</p>
+
+<p>Please commit the source file only (<code>*.Rmd</code>) and do not commit the output files (<code>*.md</code> and figures). We will re-compile the source files and upload images after we accept the article. Therefore if your article involves with special packages or data, you should add clear instructions on them in the article.</p>
+
+<h2>Reviewers</h2>
+
+<p>Everyone is welcome to become a reviewer for Vistat. Reviews are public on Github.</p>
+
+        <div id="disqus_thread"></div>
+      </section>
+    </div>
+    <footer>
+      <p><small>Generated using <a href="http://github.com/ramnathv/blogify">Blogify</a> using the <a href="https://github.com/sodabrew/theme-dinky">Dinky theme</a> </small></p>
+    </footer>    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+  </body>
+  <script>
+      var disqus_developer = 1;
+      var disqus_shortname = 'slidify'; 
+      // required: replace example with your forum shortname
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); 
+          dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || 
+           document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="../libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- Google Prettify -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+  <script src='/prettify/js/lang-r.js'></script>
+  <script>
+    var pres = document.getElementsByTagName("pre");
+    for (var i=0; i < pres.length; ++i) {
+      pres[i].className = "prettyprint linenums";
+    }
+    prettyPrint();
+  </script>
+  <!-- End Google Prettify --></html>

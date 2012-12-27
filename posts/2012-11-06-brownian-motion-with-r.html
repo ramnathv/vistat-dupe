@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="viewport" 
+      content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="author" content="" />
+    <title>Brownian Motion with R</title>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel='stylesheet' href='../libraries/frameworks/dinky/stylesheets/styles.css'>
+    <link rel='stylesheet' href='../libraries/highlighters/prettify/css/twitter-bootstrap.css'>
+        <link rel="stylesheet" href = "../assets/css/custom.css">
+<link rel="stylesheet" href = "../assets/css/ribbons.css">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Vistat</h1>
+        <p class="header">A reproducible gallery of statistical graphics</p>
+        <ul>
+           <li><a href='index.html'>Home</a></li>
+     <li><a href='about.html'>Blog</a></li>
+     <li><a href='tags.html'>Tags</a></li>
+  </ul>
+          <div class="misc vcard">
+      <h4 style='color:white;'>Contact</h4>
+        <ul>
+            <li class="contact">
+             <address><a href="mailto:contact@supstat.com">email</a></address>
+            </li>
+          
+            <li class="github">
+             <a href="http://github.com/supstat/" rel="me">github</a>
+            </li>
+        </ul>
+    </div><!-- misc -->
+</header>
+            <section>
+        <h2>Brownian Motion with R</h2>
+        
+<p><link  rel='stylesheet'
+  href="../libraries/widgets/scianimator/css/scianimator.css"></p>
+
+<script src="../libraries/widgets/scianimator/assets/js/jquery-1.4.4.min.js"></script>
+
+<script 
+  src="../libraries/widgets/scianimator/assets/js/jquery.scianimator.pack.js">
+</script>
+
+<p>We can use the <a href="http://yihui.name/animation"><strong>animation</strong> package</a> to produce animationsin R. This short article shows you how to create a Brownian motion with the <code>brownian.motion()</code> function.</p>
+
+<p>Simply speaking, a Brownian motion shows the trace of the coordinates</p>
+
+<p>\[x_{i+1}=x_{i}+\epsilon_{i+1}\]</p>
+
+<p>where \(\epsilon_i\) is i.i.d from a standard Normal distribution. That is fairly easy to program in R -- it is nothing but <code>cumsum(rnorm(n))</code>, and that is what <code>brownian.motion()</code> does internally.</p>
+
+<pre><code class="r">opts_knit$set(animation.fun = hook_scianimator)
+library(animation)
+ani.options(nmax = 50)  # create 50 image frames
+set.seed(20121106)
+brownian.motion(n = 20, pch = 21, cex = 4, col = &quot;red&quot;, bg = &quot;yellow&quot;, xlim = c(-10, 
+    10), ylim = c(-15, 15))
+</code></pre>
+
+<div class="scianimator">
+<div id="bw_fun" style="display: inline-block;">
+</div>
+
+<p></div></p>
+
+<script type="text/javascript">
+  (function($) {
+    $(document).ready(function() {
+      var imgs = Array(50);
+      for (i=0; ; i++) {
+        if (i == imgs.length) break;
+        imgs[i] = "assets/fig/bw-fun" + (i + 1) + ".png";
+      }
+      $("#bw_fun").scianimator({
+          "images": imgs,
+          "delay": 200,
+          "controls": ["first", "previous", "play", "next", "last", "loop", "speed"],
+      });
+      $("#bw_fun").scianimator("play");
+    });
+  })(jQuery);
+</script>
+
+<p>Done.</p>
+
+        <div id="disqus_thread"></div>
+      </section>
+    </div>
+    <footer>
+      <p><small>Generated using <a href="http://github.com/ramnathv/blogify">Blogify</a> using the <a href="https://github.com/sodabrew/theme-dinky">Dinky theme</a> </small></p>
+    </footer>    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+  </body>
+  <script>
+      var disqus_developer = 1;
+      var disqus_shortname = 'slidify'; 
+      // required: replace example with your forum shortname
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); 
+          dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || 
+           document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="../libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- Google Prettify -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+  <script src='/prettify/js/lang-r.js'></script>
+  <script>
+    var pres = document.getElementsByTagName("pre");
+    for (var i=0; i < pres.length; ++i) {
+      pres[i].className = "prettyprint linenums";
+    }
+    prettyPrint();
+  </script>
+  <!-- End Google Prettify --></html>

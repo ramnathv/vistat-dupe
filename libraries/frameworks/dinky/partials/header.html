@@ -1,0 +1,27 @@
+<header>
+  <h1 class="header">{{{ site.title }}}</h1>
+  <p class="header">{{{ site.tagline }}}</p>
+  <ul>
+    {{# site.navigation }}
+     <li><a href='{{{href}}}'>{{{item}}}</a></li>
+    {{/ site.navigation }}
+  </ul>
+  {{# site.author }}
+    <div class="misc vcard">
+      <h4 style='color:white;'>Contact</h4>
+        <ul>
+          {{#email}}
+            <li class="contact">
+             <address><a href="mailto:{{{site.author.email}}}">email</a></address>
+            </li>
+          {{/email}}
+          {{#github}}
+            <li class="github">
+             <a href="http://github.com/{{{site.author.github}}}/" rel="me">github</a>
+            </li>
+          {{/github}}
+        </ul>
+    </div><!-- misc -->
+  {{/ site.author }}
+</header>
+

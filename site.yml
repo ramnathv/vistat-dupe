@@ -1,0 +1,18 @@
+title: Vistat
+tagline: A reproducible gallery of statistical graphics
+owner: Yihui Xie
+author:
+  email: contact@supstat.com
+  github: supstat
+  firstname: Yihui
+  lastname: Xie
+logo: https://secure.gravatar.com/avatar/81922db99a555136b80b9ad7cb1950bb?s=420
+social:
+  github: supstat
+  twitter: supstat
+url: /vistat/posts
+URL: http://github.com/supstat/vistat
+navigation: 
+  - {item: Home, href: index.html}
+  - {item: Blog, href: about.html}
+  - {item: Tags, href: tags.html}
