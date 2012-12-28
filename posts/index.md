@@ -10,29 +10,11 @@ Vistat aims to be a journal-like website, publishing code to reproduce useful or
 
 ## Latest 5 posts
 
-<style>
-ul.posts {
-  margin-top: 15px;
-}
-ul.posts li {
-  list-style: none
-}
-ul.posts hr {
-  margin: 5px 5px;
-}
-ul.posts span {
-  font-size: 12px;
-  color: #999;
-}
-</style>
-
 <ul class="posts">
 {{# pages }}
  {{# date }}
  <li>
-  <span class='pull-right'>{{date}}</span> 
-  <a href="{{link}}">{{{ title }}}</a>
-  <hr/>
+   <span>{{date}}</span> &raquo; <a href="{{link}}">{{{ title}}}</a>
  </li>
  {{/ date }}
 {{/ pages }}

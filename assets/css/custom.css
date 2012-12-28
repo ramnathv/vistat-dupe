@@ -5,12 +5,29 @@ strong, b {
   font-weight: bolder;
 }
 
+/*
 body {
   font-family: "Source Sans Pro", Helvetica;
   font-size: 16px;
   line-height: 24px;
   color: #444;
 }
+
+ul.posts {
+  margin-top: 15px;
+}
+ul.posts li {
+  list-style: none
+}
+ul.posts hr {
+  margin: 5px 5px;
+}
+ul.posts span {
+  font-size: 12px;
+  color: #999;
+}
+
+*/
 
 
 /* tag box --- */
